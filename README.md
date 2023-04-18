@@ -1,6 +1,7 @@
 # cse210-student-template
 This is the starter code for students in CSE 210.
 There is no going back. You have to do this!!!
+Now, Try using the vscode extension.
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
