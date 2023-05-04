@@ -29,7 +29,7 @@ class Program
         return favoritenumber;
     }
 
-   static int squared(int number)
+    static int squared(int number)
     {
         int result = number * number;
         return result;
