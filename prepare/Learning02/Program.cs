@@ -15,7 +15,7 @@ class Program
         job2._company = "Microsoft";
         job2._startYear = 1999;
         job2._endYear = 2006;
-
+     
         //job1.DisplayJob();
         //job2.DisplayJob(); 
 
@@ -24,9 +24,6 @@ class Program
         resume1._name = "Juan Campos";
         resume1._jobs.Add(job1);
         resume1._jobs.Add(job2);
-
         resume1.DisplayResume();
-
-
     }
 }
