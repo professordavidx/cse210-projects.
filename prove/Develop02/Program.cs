@@ -74,34 +74,10 @@ class Program
                 
                 default:
                 break;
-
-                    
-                    
-
             }
         }
         
-        // PromptGenerator test = new PromptGenerator();
-        // string prompt = test.SelectPrompt();
-        // string prompt2 = test.SelectPrompt();
-
-
-        // DateTime theCurrentTime = DateTime.Now;
-        // DateTime theCurrentTime2 = DateTime.Now;
-
-        // string userAnswer = "this is a mess";
-        // string userAnswer2 = "this sucks";
-
-        
-        // Journal journal = new Journal();
-        // journal.AddEntry(theCurrentTime, prompt, userAnswer);
-        // journal.AddEntry(theCurrentTime2, prompt2, userAnswer2);
-        
-        // string fileName = "Re4.txt";
-        // journal.SaveJournal(fileName);
-
-        // journal.LoadJournal(fileName);
-        // journal.DisplayAllEntries();
+       
         
     
 
