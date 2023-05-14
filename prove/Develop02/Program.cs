@@ -1,42 +1,113 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 class Program
 {
     static void Main(string[] args)
     {
-        // ShowMenu();
-        PromptGenerator test = new PromptGenerator();
-        string prompt = test.SelectPrompt();
 
-        Console.WriteLine(prompt);
+        string input = "0";
 
-        Entry entry1 = new Entry();
-        entry1._prompt = prompt;
+        void ShowMenu()
+        {   
+            Console.Clear();
+            Console.WriteLine("Welcome to the Journal program!");
+            Console.WriteLine("Please select one of the following choices:");
+            Console.WriteLine("1. Write");
+            Console.WriteLine("2. Display");
+            Console.WriteLine("3. Save");
+            Console.WriteLine("4. Load");
+            Console.WriteLine("5. Quit");
+            Console.WriteLine("What would you like to do? ");
+            input = Console.ReadLine();
 
-        DateTime theCurrentTime = DateTime.Now;
-        entry1._dateTime = theCurrentTime;
+        }
 
-        string userAnswer = "this is a mess";
-        entry1._answer = userAnswer;
+        Journal journal = new Journal();
+
+
+        while(input != "5")
+        {
+            ShowMenu();
+
+            switch (input) {
+                case "1":
+                    Console.Clear();
+                    PromptGenerator promptGenerator = new PromptGenerator();
+                    string prompt = promptGenerator.SelectPrompt();
+                    Console.WriteLine(prompt);
+                    string answer = Console.ReadLine();
+                    DateTime dateTime = DateTime.Now;
+                    journal.AddEntry(dateTime,prompt,answer);
+                    Console.WriteLine("Entry created successfully");
+                    Console.WriteLine("Press any key to Continue");
+                    Console.ReadKey();
+                    break;
+                
+                case "2":
+                    Console.Clear();
+                    journal.DisplayAllEntries();
+                    Console.WriteLine("Press any key to Continue");
+                    Console.ReadKey();
+                    break;
+                
+                case "3":
+                    Console.Clear();
+                    Console.WriteLine("What is the File name?");
+                    string fileName = Console.ReadLine();
+                    journal.SaveJournal(fileName);
+                    Console.WriteLine("Saved");
+                    Console.WriteLine("Press any key to Continue");
+                    Console.ReadKey();
+                    break;
+                
+                case "4":
+                    Console.Clear();
+                    Console.WriteLine("What is the File name?");
+                    string loadFileName = Console.ReadLine();
+                    journal.LoadJournal(loadFileName);
+                    Console.WriteLine("Journal Loaded");
+                    Console.WriteLine("Press any key to Continue");
+                    Console.ReadKey();
+                    break;
+                
+                default:
+                break;
+
+                    
+                    
+
+            }
+        }
+        
+        // PromptGenerator test = new PromptGenerator();
+        // string prompt = test.SelectPrompt();
+        // string prompt2 = test.SelectPrompt();
+
+
+        // DateTime theCurrentTime = DateTime.Now;
+        // DateTime theCurrentTime2 = DateTime.Now;
+
+        // string userAnswer = "this is a mess";
+        // string userAnswer2 = "this sucks";
+
+        
+        // Journal journal = new Journal();
+        // journal.AddEntry(theCurrentTime, prompt, userAnswer);
+        // journal.AddEntry(theCurrentTime2, prompt2, userAnswer2);
+        
+        // string fileName = "Re4.txt";
+        // journal.SaveJournal(fileName);
+
+        // journal.LoadJournal(fileName);
+        // journal.DisplayAllEntries();
+        
+    
 
 
     }
 
-    // public static void ShowMenu()
-    // {
-    //     Console.WriteLine("Welcome to the Journal program!");
-    //     Console.WriteLine("Please select one of the following choices:");
-    //     Console.WriteLine("1. Write");
-    //     Console.WriteLine("2. Display");
-    //     Console.WriteLine("4. Save");
-    //     Console.WriteLine("5. Quit");
-    //     Console.WriteLine("What would you like to do? ");
-    // }
-
     
-    
-
-
 }
 
